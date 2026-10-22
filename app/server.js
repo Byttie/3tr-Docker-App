@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
-const url = 'mongodb://admin:password@localhost:27017/?authSource=admin';
+const url = 'mongodb://admin:password@mongodb:27017/?authSource=admin';
 const client = new MongoClient(url);
 const dbName = 'userdb';
 
@@ -29,4 +29,4 @@ app.post('/submit', async (req, res) => {
   res.redirect('/');
 });
 
-app.listen(3000, () => console.log('http://localhost:3000'));
+app.listen(3000, () => console.log('http://127.0.0.1:3000'));
